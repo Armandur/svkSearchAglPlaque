@@ -4,15 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSV Search</title>
+  <title>X kyrkogårdsförvaltning | Plakettsök</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
   <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
   <style>
-    /* Basic styling for table and search box */
-    .search-box {
-      margin: 20px;
-    }
-
     .results-table {
       width: 100%;
       margin-top: 20px;
@@ -23,6 +18,7 @@
     .results-table td {
       border: 1px solid #ddd;
       padding: 8px;
+      text-align: center;
     }
   </style>
 </head>
@@ -34,20 +30,20 @@
     <p>I denna webbtjänst kan du själv söka fram vilken av pelarna på Y kyrkogårds askgravlund som en namnplakett sitter</p>
   </header>
 
-  <div class="search-box">
+  <main>
     <label for="search">Sök efter askgravlundsplakett:</label>
     <input type="text" id="search" oninput="filterResults()" placeholder="Skriv minst tre tecken">
-  </div>
 
-  <table class="results-table">
-    <thead>
-      <tr>
-        <th>Namn</th>
-        <th>Pelare</th>
-      </tr>
-    </thead>
-    <tbody id="results"></tbody>
-  </table>
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th>Namn</th>
+          <th>Pelare</th>
+        </tr>
+      </thead>
+      <tbody id="results"></tbody>
+    </table>
+  </main>
 
   <script>
     let data = [];
